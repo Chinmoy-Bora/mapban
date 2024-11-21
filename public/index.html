@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Ban System</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to the Map Ban System</h1>
+        <label for="poolId">Enter Pool ID:</label>
+        <input type="text" id="poolId" placeholder="Pool ID">
+        <label for="userId">Enter User ID:</label>
+        <input type="text" id="userId" placeholder="User ID">
+        <button id="connectButton">Join Pool</button>
+    </div>
+
+    <div id="user-info"></div>
+    <div id="turn-info"></div>
+    <div id="banned-maps"></div>
+
+    <div id="map-container" style="display:none;">
+        <h3>Click a map to ban:</h3>
+        <button class="map" data-map="Map 1">Map 1</button>
+        <button class="map" data-map="Map 2">Map 2</button>
+        <button class="map" data-map="Map 3">Map 3</button>
+        <button class="map" data-map="Map 4">Map 4</button>
+    </div>
+
+    <div id="winner-info"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

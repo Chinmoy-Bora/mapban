@@ -1,27 +1,18 @@
-// const { Sequelize } = require('sequelize');
-
-// const sequelize = new Sequelize({
-//     dialect: 'sqlite',
-//     storage: './map_banning.db',
-// });
-
-// module.exports = sequelize;
-
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize(
-    'userdetails', // Database name
-    'postgres', // Username
-    '', // Password
+    process.env.DB_NAME, // Database name
+    process.env.DB_USER, // Username
+    process.env.DB_PASSWORD, // Password
     {
-        host: '', // Hostname
-        dialect: 'postgres', // Database dialect (e.g., 'postgres', 'mysql')
-        port: 5432,
+        host: process.env.DB_HOST, // Hostname
+        port: process.env.DB_PORT, // Port
+        dialect: 'postgres', // Database dialect
         dialectOptions: {
             ssl: {
-                require: true, // Force SSL usage
-                rejectUnauthorized: false, // Allow self-signed certificates (Amazon RDS uses its own certificates)
+                require: process.env.DB_SSL_REQUIRE === 'true', // Force SSL usage
+                rejectUnauthorized: process.env.DB_SSL_REJECT_UNAUTHORIZED === 'true', // Allow self-signed certificates
             },
         },
         logging: false, // Disable SQL query logging (set true for debugging)

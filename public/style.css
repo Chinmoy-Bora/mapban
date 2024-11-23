@@ -32,6 +32,7 @@ body {
   width: 300px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  /* text-transform: uppercase; */
 }
 
 .team-input-container button {
@@ -70,6 +71,7 @@ body {
 .team-name {
   font-size: 20px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .turn-indicator {
@@ -96,6 +98,7 @@ body {
   height: 100%;
   cursor: pointer;
   overflow: hidden;
+  border: none;
 }
 
 .map img {
@@ -142,6 +145,14 @@ body {
   opacity: 0.5;
 }
 
+/* Banned Map Styles */
+.map.banned {
+  opacity: 0.5; /* Reduce opacity to create a faded look */
+  pointer-events: none; /* Disable interaction */
+  cursor: not-allowed; /* Show a not-allowed cursor */
+  filter: grayscale(100%); /* Optional: make the image grayscale */
+}
+
 /* Responsive Styles */
 @media (min-width: 768px) {
   .maps-container {
@@ -163,4 +174,44 @@ body {
     width: 100%;
     height: calc(100% / 3); /* Divide equally */
   }
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fallback background */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  color: black;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

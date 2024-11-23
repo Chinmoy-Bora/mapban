@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Selection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Team Name Input Section -->
+  <div id="teamInputContainer" class="team-input-container">
+    <h1>Enter Team Names</h1>
+    <input type="text" id="team1Input" placeholder="Enter Team 1 Name" />
+    <input type="text" id="team2Input" placeholder="Enter Team 2 Name" />
+    <button id="startGameButton">Start Game</button>
+  </div>
+
+  <!-- Game Section -->
+  <div id="gameContainer" class="game-container hidden">
+    <!-- Overlay Header for Team Names and Turn -->
+    <div class="overlay-header">
+      <div id="team1Display" class="team-name">Team 1</div>
+      <div id="turnIndicator" class="turn-indicator">TURN: Team 1</div>
+      <div id="team2Display" class="team-name">Team 2</div>
+    </div>
+
+    <!-- Maps Container -->
+    <div class="maps-container" id="mapsContainer">
+      <!-- Maps will be dynamically added here -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

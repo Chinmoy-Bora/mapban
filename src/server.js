@@ -94,7 +94,7 @@ io.on('connection', (socket) => {
             pool.currentTurn = pool.currentTurn === pool.user1Id ? pool.user2Id : pool.user1Id;
 
             // Check if only one map is left unbanned
-            const allMaps = ['Map 1', 'Map 2', 'Map 3', 'Map 4']; // Replace with your actual map list
+            const allMaps = ['Ascent', 'Bind', 'Breeze', 'Fracture','Haven','Split']; // Replace with your actual map list
             const remainingMaps = allMaps.filter(map => !pool.bannedMaps.includes(map));
 
             if (remainingMaps.length === 1) {

@@ -1,9 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const Pool = require('../models/pool');
 
 const router = express.Router();
 
-// Validate and connect to a pool
+// Set up CORS for this router
+router.use(cors());
+
 router.post('/connect', async (req, res) => {
     const { poolId, userId } = req.body;
 
